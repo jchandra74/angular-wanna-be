@@ -6,7 +6,8 @@
   "author": "Jimmy Chandra",
   "license": "MIT",
   "scripts": {
-    "start": "npm run lite",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "tsc:w": "tsc -w",
     "lite": "lite-server"
   },
   "dependencies": {
@@ -14,6 +15,9 @@
     "systemjs": "^0.20.13"
   },
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "@types/angular": "^1.6.18",
+    "concurrently": "^3.4.0",
+    "lite-server": "^2.3.0",
+    "typescript": "^2.3.4"
   }
 }

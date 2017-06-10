@@ -1,50 +1,41 @@
-(function() {
-    "use strict";
-
-    var DataService = require("./data.service");
-
-    AppComponentController.$inject = ["$log", DataService.serviceName];
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var data_service_1 = require("./data.service");
+var AppComponentController = (function () {
     function AppComponentController($log, dataService) {
         this.$log = $log;
         this.dataService = dataService;
-
-        this.$onInit = $onInit.bind(this);
-        this.loadData = loadData.bind(this);
-
-        function $onInit() {
-            this.$log.info("[AppComponent] onInit");
-            this.greetTarget = "World";
-        }
-
-        function loadData() {
-            this.$log.info("[AppComponent] loadData");
-            this.dataService
-                .getData()
-                .then(bindData.bind(this))
-                .catch(handleError.bind(this));
-        }
-
-        function bindData(newGreetTarget) {
-            this.$log.info("[AppComponent] bindData", newGreetTarget);
-            this.greetTarget = newGreetTarget;
-        }
-
-        function handleError(err) {
-            this.$log.info("[AppComponent] handleError", err);
-            alert(err);
-        }
     }
-
-    var AppComponent = {
-        selector: "appRoot",
-        controller: AppComponentController,
-        template: [
-            "<div>",
-            "    Hello, {{$ctrl.greetTarget}}!<br>",
-            "    <button type=\"button\" ng-click=\"$ctrl.loadData()\">Load Data...</button>",
-            "</div>"
-        ].join("")
+    AppComponentController.prototype.$onInit = function () {
+        this.$log.info("[AppComponent] onInit");
+        this.greetTarget = "World";
     };
-
-    module.exports = AppComponent;
+    AppComponentController.prototype.loadData = function () {
+        this.$log.info("[AppComponent] loadData");
+        this.dataService
+            .getData()
+            .then(this.bindData.bind(this))
+            .catch(this.handleError.bind(this));
+    };
+    AppComponentController.prototype.bindData = function (newGreetTarget) {
+        this.$log.info("[AppComponent] bindData", newGreetTarget);
+        this.greetTarget = newGreetTarget;
+    };
+    AppComponentController.prototype.handleError = function (err) {
+        this.$log.info("[AppComponent] handleError", err);
+        alert(err);
+    };
+    return AppComponentController;
 }());
+AppComponentController.$inject = ["$log", data_service_1.DataService.serviceName];
+exports.AppComponent = {
+    selector: "appRoot",
+    controller: AppComponentController,
+    template: [
+        "<div>",
+        "    Hello, {{$ctrl.greetTarget}}!<br>",
+        "    <button type=\"button\" ng-click=\"$ctrl.loadData()\">Load Data...</button>",
+        "</div>"
+    ].join("")
+};
+//# sourceMappingURL=app.component.js.map
