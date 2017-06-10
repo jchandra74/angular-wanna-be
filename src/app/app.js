@@ -1,14 +1,21 @@
-// app.module
-(function() {
+// cjs-fakeloader: commonjs like module exporter and importer
+(function(global) {
     "use strict";
 
-    angular.module("ajs.hello.world", []);
-}());
+    global.module = global.module || {};
+    global.module.exports = global.module.exports || {};
+    global.require = require;
+
+    function require(moduleName) {
+        return global.module.exports[moduleName];
+    }
+}(window));
 
 // data.service
 (function() {
     "use strict";
 
+    DataService.serviceName = "DataService";
     DataService.$inject = ["$log", "$q"];
     function DataService($log, $q) {
         this.$log = $log;
@@ -24,16 +31,16 @@
         }
     }
 
-    angular
-        .module("ajs.hello.world")
-        .service("DataService", DataService);
+    module.exports.DataService = DataService;
 }());
 
 // app.component
 (function() {
     "use strict";
 
-    AppComponentController.$inject = ["$log", "DataService"];
+    var DataService = require("DataService");
+
+    AppComponentController.$inject = ["$log", DataService.serviceName];
     function AppComponentController($log, dataService) {
         this.$log = $log;
         this.dataService = dataService;
@@ -66,6 +73,7 @@
     }
 
     var AppComponent = {
+        selector: "appRoot",
         controller: AppComponentController,
         template: [
             "<div>",
@@ -75,14 +83,32 @@
         ].join("")
     };
 
-    angular
-        .module("ajs.hello.world")
-        .component("appRoot", AppComponent);
+    module.exports.AppComponent = AppComponent;
+}());
+
+// app.module
+(function() {
+    "use strict";
+
+    var AppComponent = require("AppComponent");
+    var DataService = require("DataService");
+
+    var moduleName = "ajs.hello.world";
+    var AppModule = angular.module(moduleName, []);
+    AppModule.moduleName = moduleName;
+
+    AppModule
+        .component(AppComponent.selector, AppComponent)
+        .service(DataService.serviceName, DataService);
+
+    module.exports.AppModule = AppModule;
 }());
 
 // main: bootstrapper
 (function() {
     "use strict";
 
-    angular.bootstrap(document.body, ["ajs.hello.world"]);
+    var AppModule = require("AppModule");
+
+    angular.bootstrap(document.body, [AppModule.moduleName]);
 }());
