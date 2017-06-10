@@ -10,7 +10,7 @@ Semi live coding showing the folowings:
 4. Refactored the application to use CommonJS like module loading syntax to be closer to Angular CLI generated application.
 5. Refactored the application to use proper module loader (SystemJS).
 6. Refactored the application to use TypeScript and proper ES2015 import / export syntax.
-7. Introduced usage of experimental decorator to make the current application to look more like Angular.
+7. Introduced usage of experimental [decorator](https://www.typescriptlang.org/docs/handbook/decorators.html) to make the current application to look more like Angular.
 
 ## Other References
 - [Migrating from npm to yarn](https://yarnpkg.com/lang/en/docs/migrating-from-npm/)
