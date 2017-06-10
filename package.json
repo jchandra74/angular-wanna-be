@@ -1,0 +1,18 @@
+{
+  "name": "ajs.hello.world",
+  "version": "1.0.0",
+  "description": "Hello World in AngularJS",
+  "main": "index.js",
+  "author": "Jimmy Chandra",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "dependencies": {
+    "angular": "^1.6.4"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
