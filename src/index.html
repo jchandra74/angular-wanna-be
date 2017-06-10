@@ -10,11 +10,10 @@
 </head>
 <body>
     <app-root>Loading...</app-root>
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="src/cjs-fakeloader.js"></script>
-    <script src="src/app/data.service.js"></script>
-    <script src="src/app/app.component.js"></script>
-    <script src="src/app/app.module.js"></script>
-    <script src="src/main.js"></script>
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+        System.import("src");
+    </script>
 </body>
 </html>

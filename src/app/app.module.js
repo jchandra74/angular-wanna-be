@@ -1,8 +1,8 @@
 (function() {
     "use strict";
 
-    var AppComponent = require("AppComponent");
-    var DataService = require("DataService");
+    var AppComponent = require("./app.component");
+    var DataService = require("./data.service");
 
     var moduleName = "ajs.hello.world";
     var AppModule = angular.module(moduleName, []);
@@ -12,5 +12,5 @@
         .component(AppComponent.selector, AppComponent)
         .service(DataService.serviceName, DataService);
 
-    module.exports.AppModule = AppModule;
+    module.exports = AppModule;
 }());

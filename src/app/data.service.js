@@ -17,5 +17,5 @@
         }
     }
 
-    module.exports.DataService = DataService;
+    module.exports = DataService;
 }());

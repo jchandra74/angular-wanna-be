@@ -1,7 +1,9 @@
 (function() {
     "use strict";
 
-    var AppModule = require("AppModule");
+    require("angular");
+
+    var AppModule = require("./app/app.module");
 
     angular.bootstrap(document.body, [AppModule.moduleName]);
 }());

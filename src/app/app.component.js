@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    var DataService = require("DataService");
+    var DataService = require("./data.service");
 
     AppComponentController.$inject = ["$log", DataService.serviceName];
     function AppComponentController($log, dataService) {
@@ -46,5 +46,5 @@
         ].join("")
     };
 
-    module.exports.AppComponent = AppComponent;
+    module.exports = AppComponent;
 }());

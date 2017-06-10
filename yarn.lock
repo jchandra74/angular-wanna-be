@@ -1789,6 +1789,10 @@ supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
 
+systemjs@^0.20.13:
+  version "0.20.13"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.20.13.tgz#adcdee167291996e54e8c9ede62da6d50c7f130f"
+
 tar-pack@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/tar-pack/-/tar-pack-3.4.0.tgz#23be2d7f671a8339376cbdb0b8fe3fdebf317984"
