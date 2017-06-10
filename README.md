@@ -13,7 +13,10 @@ Semi live coding showing the folowings:
 7. Introduced usage of experimental decorator to make the current application to look more like Angular.
 
 ## Other References
-- [Migrating from npm](https://yarnpkg.com/lang/en/docs/migrating-from-npm/)
+- [Migrating from npm to yarn](https://yarnpkg.com/lang/en/docs/migrating-from-npm/)
 - [TypeScript module resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
+- [github.com/jchandra74/angular-wanna-be](https://github.com/jchandra74/angular-wanna-be)
+- [github.com/jchandra74/angular1.5-typescript-jspm-started-kit](https://github.com/jchandra74/angular1.5-typescript-jspm-starter-kit)
+- [AngularJS 1.5+ TypeScript Snippets for VS Code](https://marketplace.visualstudio.com/items?itemName=jimmychandra.angularjs-1-5--typescript-snippets)
 
 
