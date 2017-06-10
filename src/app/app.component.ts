@@ -1,21 +1,24 @@
+import { IComponentOptionsExt } from "./../angular-shim";
+import { ILogService } from "angular";
+
 import { DataService } from "./data.service";
 
 class AppComponentController {
     
     greetTarget: string;
     
-    static $inject = ["$log", DataService.serviceName];
+    static $inject: string[] = ["$log", DataService.serviceName];
     constructor(
-        private $log,
-        private dataService
+        private $log: ILogService,
+        private dataService: DataService
     ) { }
  
-    $onInit() {
+    $onInit(): void {
         this.$log.info("[AppComponent] onInit");
         this.greetTarget = "World";
     }
 
-    loadData() {
+    loadData(): void {
         this.$log.info("[AppComponent] loadData");
         this.dataService
             .getData()
@@ -23,18 +26,18 @@ class AppComponentController {
             .catch(this.handleError.bind(this));
     }
 
-    bindData(newGreetTarget) {
+    bindData(newGreetTarget): void {
         this.$log.info("[AppComponent] bindData", newGreetTarget);
         this.greetTarget = newGreetTarget;
     }
 
-    handleError(err) {
+    handleError(err): void {
         this.$log.info("[AppComponent] handleError", err);
         alert(err);
     }
 }
 
-export let AppComponent = {
+export let AppComponent: IComponentOptionsExt = {
     selector: "appRoot",
     controller: AppComponentController,
     template: [
