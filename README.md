@@ -3,7 +3,7 @@
 Jimmy Chandra | [@jchandra](https://twitter.com/jchandra)
 
 ## In Scope
-Semi live coding showing the folowings:
+Go through codes showing the folowings:
 1. Starts with a simplistic AngularJS application (one html, inline JavaScript).
 2. Refactored out the JavaScript into its own file.
 3. Refactored the application according to [John Papa's Angular 1 Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md).
