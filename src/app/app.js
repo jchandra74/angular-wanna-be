@@ -45,8 +45,8 @@
         this.$log = $log;
         this.dataService = dataService;
 
-        this.$onInit = $onInit.bind(this);
-        this.loadData = loadData.bind(this);
+        this.$onInit = $onInit;
+        this.loadData = loadData;
 
         function $onInit() {
             this.$log.info("[AppComponent] onInit");
