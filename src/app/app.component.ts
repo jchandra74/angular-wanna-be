@@ -4,7 +4,7 @@ import { DataService } from "./data.service";
 
 @Inject("$log", DataService)
 @Component({
-    selector: "appRoot",
+    selector: "app-root",
     template: `
         <div>
             Hello, {{$ctrl.greetTarget}}!<br>
