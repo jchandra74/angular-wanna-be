@@ -23,7 +23,7 @@
                     this.$onInit = function $onInit() {
                         this.$log.info("[AppComponent] onInit");
                         this.greetTarget = "World";
-                    }.bind(this);
+                    };
 
                     this.loadData = function loadData() {
                         this.$log.info("[AppComponent] loadData");
@@ -37,7 +37,7 @@
                                 this.$log.info("[AppComponent] handleError", err);
                                 alert(err);
                             }.bind(this));
-                    }
+                    };
                 }],
             template: [
                 "<div>",
